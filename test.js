@@ -24,7 +24,7 @@ test("Mark as done", async (t) => {
     .typeText(Selector(".new-todo"), "Hello guys")
     .pressKey("enter")
     .click(Selector(".toggle"))
-    .expect(Selector(".completed").count)
+    .expect(Selector(".completed").counted)
     .eql(1);
   //--- Create a pre-assertion that validates that no existing completed tasks are on the list.
   //--- Write a test yourself that creates a new task, marks it as completed.
