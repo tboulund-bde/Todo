@@ -7,7 +7,7 @@
 		<link rel="stylesheet" href="node_modules/todomvc-app-css/index.css">
 		<style> [v-cloak] { display: none; } </style>
 	</head>
-	<body style="background-color: red;">
+	<body>
 		<section class="todoapp" v-cloak>
 			<header class="header">
 				<h1>todos</h1>
@@ -19,7 +19,7 @@
 				<ul class="todo-list">
 					<li class="todo" v-for="todo in filteredTodos" :key="todo.id" :class="{completed: todo.completed, editing: todo == editedTodo}">
 						<div class="view">
-							<input class="toggle" type="checkbox" v-model="todo.completed">
+							<input class="modified-toggle" type="checkbox" v-model="todo.completed">
 							<label @dblclick="editTodo(todo)">{{todo.title}}</label>
 							<button class="destroy" @click="removeTodo(todo)"></button>
 						</div>
