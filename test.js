@@ -25,7 +25,7 @@ test("Mark as done", async (t) => {
     .typeText(Selector(".new-todo"), "Complete homework")
     .pressKey("enter")
     // Act
-    .click(Selector("input[type='checkbox']"))
+    .click(Selector("input.toggle"))
     // Assert
     .expect(Selector("ul.todo-list li.todo.completed").count)
     .eql(1);
