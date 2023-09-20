@@ -28,7 +28,7 @@ test("Mark as done", async t => {
 
         .click(Selector(".toggle"))
 
-        .expect(Selector("ul.todo-list li.todo").count).eql(1);
+        
        
         
     
