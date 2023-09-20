@@ -8,7 +8,7 @@ test("Create new todo", async t => {
         // Pre-assertion
         .expect(Selector("ul.todo-list li.todo").count).eql(0)
         // Arrange
-        .typeText(Selector(".new-todo"), "Water the flowers")
+        .typeText(Selector(".new-todo"), "helloooo")
         // Act
         .pressKey("enter")
         // Assert
