@@ -15,18 +15,19 @@ test("Create new todo", async t => {
         .expect(Selector("ul.todo-list li.todo").count).eql(1);
 });
 
-    test("Mark as done", async t => {
-        // Create a pre-assertion that validates that no existing completed tasks are on the list.
-        await t
-            .expect(Selector("ul.todo-list li.completed").count).eql(0); 
-    
-        // Write a test yourself that creates a new task, marks it as completed.
-        await t
-            .typeText(Selector(".new-todo"), "Walk the dog")
-            .pressKey("enter")
-            .click(Selector("input.toggle"))
-            .expect(Selector("ul.todo-list li.completed").count).eql(1); // Assert that the number of completed tasks is now 1.
-    });
+test("Mark as done", async t => {
+    // Create a pre-assertion that validates that no existing completed tasks are on the list.
+    await t
+        .expect(Selector("ul.todo-list li.completed").count).eql(0); 
+
+    // Write a test yourself that creates a new task, marks it as completed.
+    await t
+        .typeText(Selector(".new-todo"), "Feed the cat")
+        .pressKey("enter")
+        .click(Selector("input.toggle"))
+        .expect(Selector("ul.todo-list li.completed").count).eql(1); // Assert that the number of completed tasks is now 1.
+});
+
 
     // Create a pre-assertion that validates that no existing completed tasks are on the list.
     // Write a test yourself that creates a new task, marks it as completed.
