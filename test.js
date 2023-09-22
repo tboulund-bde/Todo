@@ -16,7 +16,22 @@ test("Create new todo", async t => {
 });
 
 test("Mark as done", async t => {
-    // Create a pre-assertion that validates that no existing completed tasks are on the list.
-    // Write a test yourself that creates a new task, marks it as completed.
-    // Assert that the number of completed tasks is now 1.
+   
+    // Pre-assertion: Validate that no existing completed tasks are on the list initially.
+    await t
+    .expect(Selector("ul.todo-list li.completed").count).eql(0);
+
+    // Arrange: Create a new task.
+    const newTaskName = "Walk the dog"; // Replace with your desired task name.
+    await t
+        .typeText(Selector(".new-todo"), newTaskName)
+        .pressKey("enter");
+
+    // Act: Mark the task as done.
+    await t.click(Selector("ul.todo-list li.todo .toggle"));
+
+    // Assert: Verify that the number of completed tasks is now 1.
+    await t.expect(Selector("ul.todo-list li.completed").count).eql(1);
 });
+
+ 
