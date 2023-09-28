@@ -31,6 +31,7 @@ test("Mark as done", async t => {
     .click(Selector("body > section > section > ul > li > div > input"))
 
     // Assert that the number of completed tasks is now 1.
+    
     // Assert
     .expect(Selector("ul.todo-list li.todo").count).eql(1);
 });
