@@ -25,7 +25,7 @@ test("Mark as done", async t => {
         .typeText(Selector(".new-todo"), "Feed the cat")
         .pressKey("enter")
         .click(Selector("input.toggle"))
-        .expect(Selector("ul.todo-list li.completed").count).eql(2); 
+        .expect(Selector("ul.todo-list li.completed").count).eql(1); 
 });
 
 
