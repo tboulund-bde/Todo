@@ -15,8 +15,8 @@ test("Create new todo", async t => {
         .expect(Selector("ul.todo-list li.todo").count).eql(1);
 });
 
-test("Mark as done", async t => {
-    // Create a pre-assertion that validates that no existing completed tasks are on the list.
-    // Write a test yourself that creates a new task, marks it as completed.
-    // Assert that the number of completed tasks is now 1.
-});
+// test("Mark as done", async t => {
+//     // Create a pre-assertion that validates that no existing completed tasks are on the list.
+//     // Write a test yourself that creates a new task, marks it as completed.
+//     // Assert that the number of completed tasks is now 1.
+// });
