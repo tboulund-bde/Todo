@@ -15,7 +15,7 @@
 			</header>
 			<section class="main" v-show="todos.length">
 				<input id="toggle-all" class="toggle-all" type="checkbox" v-model="allDone">
-				<label for="toggle-all">Mark all as complete</label>
+				<label for="toggle-all">Mark all as complete and try new things.</label>
 				<ul class="todo-list">
 					<li class="todo" v-for="todo in filteredTodos" :key="todo.id" :class="{completed: todo.completed, editing: todo == editedTodo}">
 						<div class="view">
