@@ -13,7 +13,7 @@
 				<h1>todos</h1>
 				<input class="new-todo" autofocus autocomplete="off" placeholder="What needs to be done?" v-model="newTodo" @keyup.enter="addTodo">
 			</header>
-			<section class="main" v-show="todos.length">
+			<section class="main" v-show="todo.length">
 				<input id="toggle-all" class="toggle-all" type="checkbox" v-model="allDone">
 				<label for="toggle-all">Mark all as complete and try new things, again.</label>
 				<ul class="todo-list">
@@ -27,7 +27,7 @@
 					</li>
 				</ul>
 			</section>
-			<footer class="footer" v-show="todos.length">
+			<footer class="footer" v-show="todo.length">
 				<span class="todo-count">
 					<strong v-text="remaining"></strong> {{pluralize('item', remaining)}} left
 				</span>
