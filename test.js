@@ -1,19 +1,19 @@
 import { Selector } from "testcafe"
 
-// fixture`Demo`
-//     .page("./index.html");
+fixture`Demo`
+    .page("./index.html");
 
-// test("Create new todo", async t => {
-//     await t
-//         // Pre-assertion
-//         .expect(Selector("ul.todo-list li.todo").count).eql(0)
-//         // Arrange
-//         .typeText(Selector(".new-todo"), "Water the flowers")
-//         // Act
-//         .pressKey("enter")
-//         // Assert
-//         .expect(Selector("ul.todo-list li.todo").count).eql(1);
-// });
+test("Create new todo", async t => {
+    await t
+        // Pre-assertion
+        .expect(Selector("ul.todo-list li.todo").count).eql(0)
+        // Arrange
+        .typeText(Selector(".new-todo"), "Water the flowers")
+        // Act
+        .pressKey("enter")
+        // Assert
+        .expect(Selector("ul.todo-list li.todo").count).eql(1);
+});
 
 
 fixture`Demo`
