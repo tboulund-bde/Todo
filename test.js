@@ -18,14 +18,16 @@ test("Create new todo", async t => {
 });
 
 test("Mark as done", async t => {
-    const selectBasedOnText = Selector("ul.todo-list li.todo div.view label").withText("Water the flowers");
+    const selectBasedOnText = Selector("ul.todo-list li.todo label").withText("Put on pants");
     await t
         // Pre-assertion
-        .expect(Selector("ul.todo-list li.todo div.view input.toggle:checked").count).eql(0)
+        .expect(Selector("ul.todo-list li.todo input.toggle:checked").count).eql(0)
+        // Arrange
+        .typeText(Selector(".new-todo"), "Put on pants")
         // Act
         .click(selectBasedOnText)
         // Assert 
-        .expect(Selector("ul.todo-list li.todo div.view input.toggle:checked").count).eql(1);
+        .expect(Selector("ul.todo-list li.todo input.toggle:checked").count).eql(1);
 
 
     // Create a pre-assertion that validates that no existing completed tasks are on the list.
