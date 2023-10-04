@@ -21,14 +21,14 @@ test("Mark as done", async t => {
     const selectBasedOnText = Selector("ul.todo-list li.todo").withText("Put on pants");
     await t
         // Pre-assertion
-        .expect(Selector("ul.todo-list li.todo input.toggle:checked").count).eql(0)
+        .expect(Selector("span.todo-count").count).eql(0)
         // Arrange
         .typeText(Selector(".new-todo"), "Put on pants")
         // Act
         .pressKey("enter")
         .click(selectBasedOnText)
         // Assert 
-        .expect(Selector("ul.todo-list li.todo input.toggle:checked").count).eql(1);
+        .expect(Selector("span.todo-count").count).eql(1);
 
 
     // Create a pre-assertion that validates that no existing completed tasks are on the list.
