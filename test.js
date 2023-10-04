@@ -9,7 +9,7 @@ fixture`Demo`
 
 test("Create a new todo", async t => {
     await t
-    .expect(Selector(".todo-count").innerText).contains("0")        // Arrange
+    .expect(Selector(".todo-count").innerText).contains("0")        // Please leave a review.
     .typeText(Selector(".new-todo"), "Water the flowers again again again ")
     // Act
     .pressKey("enter")
