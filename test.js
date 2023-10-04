@@ -25,6 +25,7 @@ test("Mark as done", async t => {
         // Arrange
         .typeText(Selector(".new-todo"), "Put on pants")
         // Act
+        .pressKey("enter")
         .click(selectBasedOnText)
         // Assert 
         .expect(Selector("ul.todo-list li.todo input.toggle:checked").count).eql(1);
