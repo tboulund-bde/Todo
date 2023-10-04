@@ -10,7 +10,7 @@ fixture`Demo`
 test("Create a new todo", async t => {
     await t
     .expect(Selector(".todo-count").innerText).contains("0")        // Arrange
-    .typeText(Selector(".new-todo"), "Water the flowers again again ")
+    .typeText(Selector(".new-todo"), "Water the flowers again again again ")
     // Act
     .pressKey("enter")
     .click(Selector(".toggle")) // Close parenthesis here
