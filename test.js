@@ -22,7 +22,7 @@ test("Mark as done", async f => {
         // Pre-assertion
         .expect(Selector("ul.todo-list li.todo div.view input.toggle:checked").count).eql(0)
         // Arrange
-        .toggle(Selector("ul.todo-list li.todo div.view input.toggle"), "checked")
+        .typeCheckbox(Selector("ul.todo-list li.todo div.view input.toggle"), "checked")
         // Act
         .pressKey("enter")
         // Assert 
