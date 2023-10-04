@@ -17,8 +17,8 @@ test("Create new todo", async t => {
         .expect(Selector("ul.todo-list li.todo").count).eql(1);
 });
 
-test("Mark as done", async t => {
-    await t
+test("Mark as done", async f => {
+    await f
         // Pre-assertion
         .expect(Selector("ul.todo-list li.todo div.view input.toggle:checked").count).eql(0)
         // Arrange
