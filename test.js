@@ -17,14 +17,13 @@ test("Create new todo", async t => {
         .expect(Selector("ul.todo-list li.todo").count).eql(1);
 });
 
-test("Mark as done", async f => {
-    await f
+test("Mark as done", async t => {
+    const selectBasedOnText = Selector("ul.todo-list li.todo div.view label").withText("Water the flowers");
+    await t
         // Pre-assertion
         .expect(Selector("ul.todo-list li.todo div.view input.toggle:checked").count).eql(0)
-        // Arrange
-        .typeText(Selector("ul.todo-list li.todo div.view input.toggle"), "checked")
         // Act
-        .pressKey("ul.todo-list li.todo div.view input.toggle")
+        .click(selectBasedOnText)
         // Assert 
         .expect(Selector("ul.todo-list li.todo div.view input.toggle:checked").count).eql(1);
 
