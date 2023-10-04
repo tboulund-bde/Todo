@@ -1,5 +1,7 @@
 import { Selector } from "testcafe"
 
+// merge test
+
 fixture`Demo`
     .page("./index.html");
 
