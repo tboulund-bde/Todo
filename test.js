@@ -15,8 +15,19 @@ test("Create new todo", async t => {
         .expect(Selector("ul.todo-list li.todo").count).eql(1);
 });
 
+//Assignment illustration
+
+// Assignment
 test("Mark as done", async t => {
-    // Create a pre-assertion that validates that no existing completed tasks are on the list.
-    // Write a test yourself that creates a new task, marks it as completed.
-    // Assert that the number of completed tasks is now 1.
+    const selectBasedOnText = Selector("ul.todo-list li.todo").withText("Put on pants");
+    await t
+        // Pre-assertion
+        .expect(Selector("ul.todo-list li.todo").count).eql(0)
+        // Arrange
+        .typeText(Selector(".new-todo"), "Put on pants")
+        // Act
+        .pressKey("enter")
+        .click(".toggle")
+        // Assert 
+        .expect(Selector("ul.todo-list li.todo").count).eql(1);
 });
